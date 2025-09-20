@@ -13,7 +13,7 @@ impl Default for TemplateApp {
     fn default() -> Self {
         Self {
             // Example stuff:
-            label: "Hello World!".to_owned(),
+            label: "Sprog".to_owned(),
             value: 2.7,
         }
     }
@@ -60,30 +60,21 @@ impl eframe::App for TemplateApp {
                     });
                     ui.add_space(16.0);
                 }
-
-                egui::widgets::global_theme_preference_buttons(ui);
             });
         });
 
         egui::CentralPanel::default().show(ctx, |ui| {
             // The central panel the region left after adding TopPanel's and SidePanel's
-            ui.heading("eframe template");
-
-            ui.horizontal(|ui| {
-                ui.label("Write something: ");
-                ui.text_edit_singleline(&mut self.label);
-            });
-
-            ui.add(egui::Slider::new(&mut self.value, 0.0..=10.0).text("value"));
-            if ui.button("Increment").clicked() {
-                self.value += 1.0;
+            ui.heading("Sprog");
+            ui.label("alternative, advanced firmware for the Hack Club Sprig :: in Circuitpython and Rust");
+            if ui.button("Install").clicked() {
+                // TODO: do something in here :)
             }
-
             ui.separator();
 
             ui.add(egui::github_link_file!(
-                "https://github.com/emilk/eframe_template/blob/main/",
-                "Source code."
+                "https://github.com/lucas11222/sprog_pc/blob/main/",
+                "Check out the repo!"
             ));
 
             ui.with_layout(egui::Layout::bottom_up(egui::Align::LEFT), |ui| {
